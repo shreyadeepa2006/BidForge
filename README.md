@@ -55,13 +55,6 @@ The database script inserts starter records so the browse, auction, bidding and 
 
 The normal pages (browse with search and filters, sell, bid, wallet, dashboard) use the same procedures.
 
-## What was removed so it matches your design
-
-`Items.Metal`, `Items.Purity`, `Items.ImageURL` and their CHECK constraints; the extra `BidLog` table
-and its trigger; the MongoDB logging; the old split SQL files (03 to 09 patched each other, now one
-clean set); the Metal filter, photo link and metal/purity fields on the website. Item pictures are now
-drawings chosen by `Category`.
-
 ## Where each DBMS topic is shown
 
 | Topic | Where |
