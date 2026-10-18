@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create auction | BidForge</title>
+  <meta name="description" content="Schedule an auction for one of your items.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="site-nav"></header>
+<main class="page" id="main">
+  <div class="container">
+    <div class="page-head"><h1>Create an auction</h1><p>Choose one of your items and set when bidding opens and closes.</p></div>
+    <div id="auction-root">
+      <div class="two-col">
+        <section class="panel">
+          <form class="form form--two" id="auction-form" novalidate>
+            <div class="field full"><label for="ItemID">Item</label><select id="ItemID"></select></div>
+            <div class="field full"><label for="StartingPrice">Starting price</label><div class="input-prefix"><span>₹</span><input id="StartingPrice" type="number" min="1" step="1" inputmode="numeric"></div><span class="hint">The first bid must be at least this amount.</span></div>
+            <div class="field"><label for="StartTime">Bidding opens</label><input id="StartTime" type="datetime-local"></div>
+            <div class="field"><label for="EndTime">Bidding closes</label><input id="EndTime" type="datetime-local"></div>
+            <div class="field full"><span class="label">Quick lengths</span><div class="chips" id="durations" role="group" aria-label="Auction length"></div></div>
+            <div class="full"><button class="btn btn--primary" type="submit">Start auction</button></div>
+          </form>
+        </section>
+        <aside aria-label="Preview">
+          <p class="muted small">Preview of your lot card</p>
+          <div id="preview" style="max-width:320px"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer" id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/pages/create-auction.js"></script>
+</body>
+</html>

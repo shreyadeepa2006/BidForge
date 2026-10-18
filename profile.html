@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile | BidForge</title>
+  <meta name="description" content="Your account details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="site-nav"></header>
+<main class="page" id="main">
+  <div class="container">
+    <div class="page-head"><h1>Your profile</h1><p>Your name, phone number and address are used for shipping and for other bidders to see your name.</p></div>
+    <div class="two-col">
+      <section class="panel">
+        <h2>Details</h2>
+        <form class="form" id="profile-form" novalidate>
+          <div class="field"><label for="FullName">Full name</label><input id="FullName" maxlength="100"></div>
+          <div class="field"><label for="Email">Email</label><input id="Email" readonly><span class="hint">Your email is your login, so it cannot be changed here.</span></div>
+          <div class="field"><label for="PhoneNo">Phone number</label><input id="PhoneNo" type="tel" maxlength="15"></div>
+          <div class="field"><label for="Address">Shipping address</label><input id="Address" maxlength="200"></div>
+          <div><button class="btn btn--primary" type="submit">Save changes</button></div>
+        </form>
+      </section>
+      <section class="panel">
+        <h2>Account</h2>
+        <dl class="kv" id="account-facts"></dl>
+        <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+        <div class="btn-row"><a class="btn btn--secondary" href="wallet.html">Open wallet</a><a class="btn btn--secondary" href="my-bids.html">My bids</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="footer" id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/pages/profile.js"></script>
+</body>
+</html>

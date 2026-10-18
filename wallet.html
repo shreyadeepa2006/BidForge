@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wallet | BidForge</title>
+  <meta name="description" content="Your wallet balance and latest transaction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="site-nav"></header>
+<main class="page" id="main">
+  <div class="container">
+    <div class="page-head"><h1>Wallet</h1><p>Your available wallet balance determines how much you can bid. Winning an auction deducts the final price from your balance.</p></div>
+    <div class="two-col">
+      <div style="display:grid;gap:24px">
+        <section class="balance-card" aria-labelledby="bal-label">
+          <span class="lbl" id="bal-label">Wallet balance</span>
+          <span class="price" id="balance">...</span>
+          <p id="balance-note"></p>
+        </section>
+        <section class="panel">
+          <h2>Add wallet credit</h2>
+          <form class="form" id="fund-form" novalidate>
+            <div class="chips" id="quick-amounts" role="group" aria-label="Quick amounts"></div>
+            <div class="field"><label for="amount">Amount</label><div class="input-prefix"><span>₹</span><input id="amount" type="number" min="1" step="1" inputmode="numeric"></div></div>
+            <p class="hint">Wallet credits are internal to BidForge. No external payment provider is connected.</p>
+            <div><button class="btn btn--primary" type="submit">Add money</button></div>
+          </form>
+        </section>
+      </div>
+      <section class="panel">
+        <h2>Latest transaction</h2>
+        <div id="latest-tx"></div>
+        <p class="small muted" style="margin:18px 0 0">The Wallet table keeps one row per user, so it stores only the most recent transaction. To show a full history, the table would need one row per transaction.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="footer" id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/pages/wallet.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BidForge, live jewellery auctions</title>
+  <meta name="description" content="Bid on fine jewellery in live auctions with a closing clock.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav" id="site-nav"></header>
+<main id="main">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <h1>Bid on fine jewellery while the clock runs.</h1>
+        <p class="lede">Each lot is one piece with a fixed closing time. When the clock reaches zero, the highest bid wins.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="browse.html">Browse live lots</a>
+          <a class="btn btn--secondary" href="list-item.html">Sell a piece</a>
+        </div>
+      </div>
+      <div class="hero__media" id="featured"></div>
+    </div>
+  </section>
+  <div class="container">
+    <section class="section">
+      <div class="section__head"><h2>Ending soon</h2><a href="browse.html">See all live lots</a></div>
+      <div class="lots" id="ending-soon"></div>
+    </section>
+    <section class="section">
+      <div class="section__head"><h2>Browse by category</h2></div>
+      <div class="cats" id="cats"></div>
+    </section>
+    <section class="section">
+      <div class="section__head"><h2>How a lot is won</h2></div>
+      <ol class="steps">
+        <li><h3>Add money to your wallet</h3><p>Your wallet balance is what you can bid with. A bid can never be larger than the money you have available.</p></li>
+        <li><h3>Place a bid on a live lot</h3><p>Each new bid must beat the current highest bid by the minimum raise. If someone outbids you, the lot page tells you straight away.</p></li>
+        <li><h3>Hold the highest bid at closing</h3><p>When the clock hits zero, the highest bidder wins. The price moves from their wallet to the seller's wallet.</p></li>
+      </ol>
+    </section>
+  </div>
+</main>
+<footer class="footer" id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/components.js"></script>
+<script src="js/pages/index.js"></script>
+</body>
+</html>
