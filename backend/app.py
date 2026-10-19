@@ -47,7 +47,10 @@ if not DB_PASSWORD:
                      "or  export DB_PASSWORD=your_password   (Mac/Linux)")
 
 pool = oracledb.create_pool(user=DB_USER, password=DB_PASSWORD, dsn=DB_DSN,
-                            min=1, max=5, increment=1)
+                            min=0, max=5, increment=1,
+                            tcp_connect_timeout=10,
+                            getmode=oracledb.POOL_GETMODE_TIMEDWAIT,
+                            wait_timeout=10000)
 
 # Oracle returns column names in CAPITALS. This maps them back to the
 # spelling the website uses (same as the table columns).
