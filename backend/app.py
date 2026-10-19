@@ -152,11 +152,13 @@ def database_error(e):
 
 @app.before_request
 def settle_finished_auctions():
-    """Before every API call, close auctions whose end time has passed
-    (the winner pays, the seller is paid). Done by close_expired_auctions in Oracle."""
     if request.path.startswith("/api/") and request.method != "OPTIONS":
-        with pool.acquire() as conn:
-            conn.cursor().callproc("close_expired_auctions")
+        try:
+            with pool.acquire() as conn:
+                conn.cursor().callproc("close_expired_auctions")
+        except Exception as e:
+            print("DATABASE CONNECTION ERROR:", e)
+            return fail("Cannot reach the database: " + str(e), 500)
 
 
 @app.get("/")
